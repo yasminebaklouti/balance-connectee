@@ -174,6 +174,19 @@
                 <span id="topbar-coords-text"></span>
             </div>
         </header>
+        
+        <!-- Rappel visite -->
+        <div class="visit-reminder" id="visit-reminder" style="display:none;" role="status">
+            <span class="vr-icon" aria-hidden="true">🐝</span>
+            <div class="vr-text">
+                <strong>Pensez à rendre visite à vos abeilles</strong>
+                <span id="vr-detail"></span>
+            </div>
+            <div class="vr-actions">
+                <button class="btn btn-primary" id="vr-done" type="button">✔ Visite effectuée</button>
+                <button class="btn btn-ghost" id="vr-snooze" type="button">Plus tard</button>
+            </div>
+        </div>
 
         <!-- Metric cards -->
         <div class="metrics-row" id="metrics-row">
@@ -465,6 +478,11 @@
         const appScript = document.createElement('script');
         appScript.src = 'js/app.js';
         appScript.async = false;
+        appScript.onload = () => {
+            const reminderScript = document.createElement('script');
+            reminderScript.src = 'js/reminder.js';
+            document.body.appendChild(reminderScript);
+        };
         document.currentScript.after(appScript);
     }
 </script>
