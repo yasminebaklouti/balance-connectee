@@ -1749,3 +1749,28 @@ tfoot td {
     outline-offset: 2px;
     box-shadow: 0 0 0 4px var(--focus-ring);
 }
+/* ── Rappel de visite ── */
+.visit-reminder {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 1rem;
+    padding: 0.9rem 1.2rem;
+    background: #FFF7E0;
+    border: 1px solid #F5A623;
+    border-left: 5px solid #F5A623;
+    border-radius: 12px;
+    color: #5C3A00;
+}
+.visit-reminder .vr-icon { font-size: 1.6rem; }
+.visit-reminder .vr-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-size: 0.9rem;
+}
+.visit-reminder .vr-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+    .visit-reminder { flex-direction: column; align-items: flex-start; }
+}
